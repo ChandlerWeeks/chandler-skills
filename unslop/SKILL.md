@@ -1,12 +1,19 @@
 ---
 name: unslop
-description: Cut AI tells from any writing. Must always apply.
-disable-model-invocation: true
+description: "Cut AI tells from writing. Use when asked to unslop or de-slop text, when removing AI-sounding language, when another skill delegates its style catalog here, and when polishing prose that other people will read, such as docs, READMEs, commit messages, PR descriptions, and published copy."
 ---
 
 # Unslop
 
 Edit text to remove AI patterns.
+
+## When to apply
+
+Apply these rules to prose that a person will read: documentation, READMEs, commit messages, PR descriptions, reports, published copy, and your own replies when the user asks for cleaner writing. The `technical-writing` skill delegates its style catalog here, so apply them to anything that skill writes or reviews.
+
+Do not apply them where the exact wording carries meaning. Quoted source material, log output, error strings, test fixtures, API and field names, and a user's own words that you were asked to preserve all stay as they are. Rewriting those changes the meaning rather than the style.
+
+These rules govern style, not content. When a rule and the accurate sentence conflict, keep the accurate sentence and leave a note.
 
 ## Process
 
@@ -34,7 +41,7 @@ Rule numbers are stable ids that other skills cite. A removed rule leaves a gap.
 
 ### Style
 
-13. **Em dash overuse.** Avoid em dashes entirely. Use periods or c[118;1:3uommas only (no parentheses, no en dashes, no hyphen-as-dash substitutes). If a thought needs separation, end the sentence or use a comma.
+13. **Em dash overuse.** Avoid em dashes entirely. Use periods or commas only (no parentheses, no en dashes, no hyphen-as-dash substitutes). If a thought needs separation, end the sentence or use a comma.
 14. **Colon overuse.** Colons are fine before a list or example. Not as mid-sentence connectors. "If you're coming from traditional automation: instead of registering event handlers, you describe conditions" adds nothing with the colon. Rewrite to let the point stand on its own without comparison framing. "Describing when the scheduler should fire works best as plain English." Same meaning, no crutch punctuation.
 15. **Boldface overuse.** Don't bold every proper noun or acronym.
 16. **Inline-header lists.** The tell is a bold label and colon that restates the line: "**Performance:** Performance improved...". Convert those to prose. A bold lead-in that ends in a period, names the item, and is followed by genuinely new detail ("**Schema in TypeScript.** Tables live in one file.") is fine, not a tell.
