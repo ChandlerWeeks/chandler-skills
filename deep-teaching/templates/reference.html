@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="{{REFERENCE_DESCRIPTION}}">
+	<title>{{REFERENCE_TITLE}}</title>
+
+	<!-- Prototype use only. Compile Tailwind locally for production or offline delivery. -->
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script>
+		tailwind.config = {
+			theme: {
+				extend: {
+					colors: {
+						reference: {
+							50: '#f0f9ff',
+							100: '#e0f2fe',
+							700: '#0369a1',
+							900: '#0c4a6e'
+						}
+					}
+				}
+			}
+		};
+	</script>
+</head>
+<body class="min-h-screen bg-slate-50 text-slate-900 antialiased">
+	<a href="#reference-content" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-white focus:px-4 focus:py-2 focus:shadow-lg">
+		Skip to reference content
+	</a>
+
+	<header class="border-b border-slate-200 bg-white">
+		<div class="mx-auto max-w-7xl px-5 py-9 sm:px-8">
+			<p class="text-sm font-semibold uppercase tracking-wide text-reference-700">{{PRODUCT_OR_SUBJECT}}</p>
+			<h1 class="mt-3 text-4xl font-bold tracking-tight text-slate-950">{{REFERENCE_TITLE}}</h1>
+			<p class="mt-4 max-w-3xl text-lg leading-8 text-slate-700">{{REFERENCE_SCOPE}}</p>
+			<dl class="mt-6 flex flex-wrap gap-x-8 gap-y-3 text-sm text-slate-600">
+				<div class="flex gap-2">
+					<dt class="font-semibold text-slate-900">Applies to:</dt>
+					<dd>{{VERSION_OR_PLATFORM}}</dd>
+				</div>
+				<div class="flex gap-2">
+					<dt class="font-semibold text-slate-900">Updated:</dt>
+					<dd><time datetime="{{UPDATED_ISO_DATE}}">{{UPDATED_DATE}}</time></dd>
+				</div>
+			</dl>
+		</div>
+	</header>
+
+	<div class="mx-auto grid max-w-7xl gap-10 px-5 py-10 sm:px-8 lg:grid-cols-[16rem_minmax(0,1fr)]">
+		<nav class="lg:sticky lg:top-6 lg:self-start" aria-label="On this page">
+			<h2 class="text-sm font-bold uppercase tracking-wide text-slate-900">On this page</h2>
+			<ul class="mt-4 space-y-2 border-l border-slate-300 pl-4 text-sm">
+				<li><a class="text-slate-700 hover:text-reference-700 hover:underline" href="#overview">Overview</a></li>
+				<li><a class="text-slate-700 hover:text-reference-700 hover:underline" href="#terms">Terms</a></li>
+				<li><a class="text-slate-700 hover:text-reference-700 hover:underline" href="#syntax">Syntax</a></li>
+				<li><a class="text-slate-700 hover:text-reference-700 hover:underline" href="#parameters">Parameters</a></li>
+				<li><a class="text-slate-700 hover:text-reference-700 hover:underline" href="#behavior">Behavior</a></li>
+				<li><a class="text-slate-700 hover:text-reference-700 hover:underline" href="#limits">Limits</a></li>
+				<li><a class="text-slate-700 hover:text-reference-700 hover:underline" href="#errors">Errors</a></li>
+				<li><a class="text-slate-700 hover:text-reference-700 hover:underline" href="#examples">Examples</a></li>
+				<li><a class="text-slate-700 hover:text-reference-700 hover:underline" href="#sources">Sources</a></li>
+			</ul>
+		</nav>
+
+		<main id="reference-content" class="min-w-0 space-y-14">
+			<section id="overview" aria-labelledby="overview-heading">
+				<h2 id="overview-heading" class="text-3xl font-bold tracking-tight">Overview</h2>
+				<div class="mt-5 max-w-4xl space-y-4 leading-7 text-slate-700">
+					<p>{{OVERVIEW_DEFINITION}}</p>
+					<p>{{OVERVIEW_SCOPE_AND_PURPOSE}}</p>
+				</div>
+				<aside class="mt-6 rounded-xl border border-reference-100 bg-reference-50 p-5 text-reference-900" aria-label="Version note">
+					<p><strong>Version note:</strong> {{VERSION_NOTE}}</p>
+				</aside>
+			</section>
+
+			<section id="terms" aria-labelledby="terms-heading">
+				<h2 id="terms-heading" class="text-3xl font-bold tracking-tight">Terms</h2>
+				<dl class="mt-6 divide-y divide-slate-200 overflow-hidden rounded-xl border border-slate-200 bg-white">
+					<div class="p-5 sm:grid sm:grid-cols-[14rem_1fr] sm:gap-5">
+						<dt class="font-semibold text-slate-950"><code>{{TERM_1}}</code></dt>
+						<dd class="mt-2 leading-7 text-slate-700 sm:mt-0">{{TERM_1_DEFINITION}}</dd>
+					</div>
+					<div class="p-5 sm:grid sm:grid-cols-[14rem_1fr] sm:gap-5">
+						<dt class="font-semibold text-slate-950"><code>{{TERM_2}}</code></dt>
+						<dd class="mt-2 leading-7 text-slate-700 sm:mt-0">{{TERM_2_DEFINITION}}</dd>
+					</div>
+				</dl>
+			</section>
+
+			<section id="syntax" aria-labelledby="syntax-heading">
+				<h2 id="syntax-heading" class="text-3xl font-bold tracking-tight">Syntax</h2>
+				<p class="mt-4 max-w-4xl leading-7 text-slate-700">{{SYNTAX_DESCRIPTION}}</p>
+				<div class="mt-6 o[118;1:3uverflow-x-auto rounded-xl bg-slate-950 p-5 text-slate-100 shadow-sm" tabindex="0" aria-label="Syntax example">
+					<pre><code>{{SYNTAX_BLOCK}}</code></pre>
+				</div>
+			</section>
+
+			<section id="parameters" aria-labelledby="parameters-heading">
+				<h2 id="parameters-heading" class="text-3xl font-bold tracking-tight">Parameters</h2>
+				<div class="mt-6 overflow-x-auto rounded-xl border border-slate-200 bg-white shadow-sm">
+					<table class="min-w-full border-collapse text-left text-sm">
+						<caption class="sr-only">Parameters, types, requirements, defaults, and descriptions</caption>
+						<thead class="bg-slate-100 text-slate-950">
+							<tr>
+								<th class="px-4 py-3 font-semibold" scope="col">Name</th>
+								<th class="px-4 py-3 font-semibold" scope="col">Type</th>
+								<th class="px-4 py-3 font-semibold" scope="col">Required</th>
+								<th class="px-4 py-3 font-semibold" scope="col">Default</th>
+								<th class="px-4 py-3 font-semibold" scope="col">Description</th>
+							</tr>
+						</thead>
+						<tbody class="divide-y divide-slate-200 text-slate-700">
+							<tr>
+								<td class="whitespace-nowrap px-4 py-3 font-mono text-slate-950">{{PARAMETER_1_NAME}}</td>
+								<td class="whitespace-nowrap px-4 py-3"><code>{{PARAMETER_1_TYPE}}</code></td>
+								<td class="px-4 py-3">{{PARAMETER_1_REQUIRED}}</td>
+								<td class="px-4 py-3"><code>{{PARAMETER_1_DEFAULT}}</code></td>
+								<td class="min-w-72 px-4 py-3 leading-6">{{PARAMETER_1_DESCRIPTION}}</td>
+							</tr>
+							<tr>
+								<td class="whitespace-nowrap px-4 py-3 font-mono text-slate-950">{{PARAMETER_2_NAME}}</td>
+								<td class="whitespace-nowrap px-4 py-3"><code>{{PARAMETER_2_TYPE}}</code></td>
+								<td class="px-4 py-3">{{PARAMETER_2_REQUIRED}}</td>
+								<td class="px-4 py-3"><code>{{PARAMETER_2_DEFAULT}}</code></td>
+								<td class="min-w-72 px-4 py-3 leading-6">{{PARAMETER_2_DESCRIPTION}}</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</section>
+
+			<section id="behavior" aria-labelledby="behavior-heading">
+				<h2 id="behavior-heading" class="text-3xl font-bold tracking-tight">Behavior</h2>
+				<div class="mt-6 space-y-6">
+					<article class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+						<h3 class="text-xl font-semibold">{{BEHAVIOR_1_HEADING}}</h3>
+						<p class="mt-3 leading-7 text-slate-700">{{BEHAVIOR_1_DESCRIPTION}}</p>
+					</article>
+					<article class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+						<h3 class="text-xl font-semibold">{{BEHAVIOR_2_HEADING}}</h3>
+						<p class="mt-3 leading-7 text-slate-700">{{BEHAVIOR_2_DESCRIPTION}}</p>
+					</article>
+				</div>
+			</section>
+
+			<section id="limits" aria-labelledby="limits-heading">
+				<h2 id="limits-heading" class="text-3xl font-bold tracking-tight">Limits</h2>
+				<ul class="mt-5 list-disc space-y-3 pl-6 leading-7 text-slate-700">
+					<li>{{LIMIT_1}}</li>
+					<li>{{LIMIT_2}}</li>
+					<li>{{LIMIT_3}}</li>
+				</ul>
+			</section>
+
+			<section id="errors" aria-labelledby="errors-heading">
+				<h2 id="errors-heading" class="text-3xl font-bold tracking-tight">Errors</h2>
+				<div class="mt-6 overflow-x-auto rounded-xl border border-slate-200 bg-white shadow-sm">
+					<table class="min-w-full border-collapse text-left text-sm">
+						<caption class="sr-only">Errors, causes, and effects</caption>
+						<thead class="bg-slate-100 text-slate-950">
+							<tr>
+								<th class="px-4 py-3 font-semibold" scope="col">Error</th>
+								<th class="px-4 py-3 font-semibold" scope="col">Condition</th>
+								<th class="px-4 py-3 font-semibold" scope="col">Effect</th>
+							</tr>
+						</thead>
+						<tbody class="divide-y divide-slate-200 text-slate-700">
+							<tr>
+								<td class="px-4 py-3 font-mono text-slate-950">{{ERROR_1_NAME}}</td>
+								<td class="min-w-64 px-4 py-3 leading-6">{{ERROR_1_CONDITION}}</td>
+								<td class="min-w-64 px-4 py-3 leading-6">{{ERROR_1_EFFECT}}</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</section>
+
+			<section id="examples" aria-labelledby="examples-heading">
+				<h2 id="examples-heading" class="text-3xl font-bold tracking-tight">Examples</h2>
+				<p class="mt-4 max-w-4xl leading-7 text-slate-700">Examples clarify the facts on this page. They do not form a guided tutorial.</p>
+				<div class="mt-6 space-y-6">
+					<article>
+						<h3 class="text-xl font-semibold">{{EXAMPLE_1_HEADING}}</h3>
+						<p class="mt-3 leading-7 text-slate-700">{{EXAMPLE_1_CONTEXT}}</p>
+						<div class="mt-4 overflow-x-auto rounded-xl bg-slate-950 p-5 text-slate-100" tabindex="0" aria-label="{{EXAMPLE_1_HEADING}} code">
+							<pre><code>{{EXAMPLE_1_CODE}}</code></pre>
+						</div>
+						<p class="mt-3 leading-7 text-slate-700"><strong>Result:</strong> {{EXAMPLE_1_RESULT}}</p>
+					</article>
+				</div>
+			</section>
+
+			<section id="sources" aria-labelledby="sources-heading">
+				<h2 id="sources-heading" class="text-3xl font-bold tracking-tight">Sources</h2>
+				<ol class="mt-5 list-decimal space-y-4 pl-6 leading-7 text-slate-700">
+					<li>
+						<a class="font-semibold text-reference-700 underline decoration-reference-100 underline-offset-4 hover:text-reference-900" href="{{SOURCE_1_URL}}">{{SOURCE_1_TITLE}}</a>
+						<span> — {{SOURCE_1_AUTHOR_OR_ORGANIZATION}}, {{SOURCE_1_DATE}}. {{SOURCE_1_CONTRIBUTION}}</span>
+					</li>
+					<li>
+						<a class="font-semibold text-reference-700 underline decoration-reference-100 underline-offset-4 hover:text-reference-900" href="{{SOURCE_2_URL}}">{{SOURCE_2_TITLE}}</a>
+						<span> — {{SOURCE_2_AUTHOR_OR_ORGANIZATION}}, {{SOURCE_2_DATE}}. {{SOURCE_2_CONTRIBUTION}}</span>
+					</li>
+				</ol>
+			</section>
+		</main>
+	</div>
+
+	<footer class="border-t border-slate-200 bg-white">
+		<div class="mx-auto max-w-7xl px-5 py-8 text-sm text-slate-600 sm:px-8">
+			<p>{{REFERENCE_FOOTER_NOTE}}</p>
+		</div>
+	</footer>
+</body>
+</html>
+

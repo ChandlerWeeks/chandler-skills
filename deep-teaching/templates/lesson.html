@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="{{LESSON_DESCRIPTION}}">
+	<title>{{LESSON_TITLE}}</title>
+
+	<!-- Prototype use only. Compile Tailwind locally for production or offline delivery. -->
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script>
+		tailwind.config = {
+			theme: {
+				extend: {
+					colors: {
+						lesson: {
+							50: '#f5f7ff',
+							100: '#e9edff',
+							600: '#4f46e5',
+							700: '#4338ca',
+							900: '#27235f'
+						}
+					}
+				}
+			}
+		};
+	</script>
+
+	<!-- Copied into the workspace from the skill. Path is relative to lessons/. -->
+	<script type="module" src="../assets/widgets.js"></script>
+</head>
+<body class="min-h-screen bg-slate-50 text-slate-900 antialiased">
+	<a href="#lesson-content" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-white focus:px-4 focus:py-2 focus:shadow-lg">
+		Skip to lesson content
+	</a>
+
+	<header class="border-b border-slate-200 bg-white">
+		<div class="mx-auto max-w-5xl px-5 py-10 sm:px-8">
+			<p class="mb-3 text-sm font-semibold uppercase tracking-wide text-lesson-700">{{COURSE_OR_TOPIC}}</p>
+			<h1 class="max-w-4xl text-4xl font-bold tracking-tight text-slate-950 sm:text-5xl">{{LESSON_TITLE}}</h1>
+			<p class="mt-5 max-w-3xl text-lg leading-8 text-slate-700">{{LESSON_PURPOSE}}</p>
+			<dl class="mt-6 flex flex-wrap gap-x-8 gap-y-3 text-sm text-slate-600">
+				<div class="flex gap-2">
+					<dt class="font-semibold text-slate-900">Time:</dt>
+					<dd>{{ESTIMATED_TIME}}</dd>
+				</div>
+				<div class="flex gap-2">
+					<dt class="font-semibold text-slate-900">Level:</dt>
+					<dd>{{LEVEL}}</dd>
+				</div>
+				<div class="flex gap-2">
+					<dt class="font-semibold text-slate-900">Updated:</dt>
+					<dd><time datetime="{{UPDATED_ISO_DATE}}">{{UPDATED_DATE}}</time></dd>
+				</div>
+			</dl>
+		</div>
+	</header>
+
+	<main id="lesson-content" class="mx-auto max-w-5xl space-y-16 px-5 py-12 sm:px-8">
+		<section aria-labelledby="objectives-heading" class="rounded-2xl border border-lesson-100 bg-lesson-50 p-6 sm:p-8">
+			<h2 id="objectives-heading" class="text-2xl font-bold text-lesson-900">What you will be able to do</h2>
+			<ul class="mt-4 list-disc space-y-2 pl-6 text-slate-800">
+				<li>{{OBSERVABLE_OBJECTIVE_1}}</li>
+				<li>{{OBSERVABLE_OBJECTIVE_2}}</li>
+				<!-- Add no more than one additional objective for a bounded lesson. -->
+			</ul>
+		</section>
+
+		<section aria-labelledby="prerequisites-heading">
+			<h2 id="prerequisites-heading" class="text-3xl font-bold tracking-tight">Check the prerequisites</h2>
+			<p class="mt-4 max-w-3xl leading-7 text-slate-700">{{PREREQUISITE_CONTEXT}}</p>
+
+			<form class="mt-6 rounded-xl border border-slate-200 bg-white p-6 shadow-sm" data-formative-check>
+				<fieldset>
+					<legend class="text-lg font-semibold">{{PREREQUISITE_QUESTION}}</legend>
+					<div class="mt-4 space-y-3">
+						<label class="flex cursor-pointer gap-3 rounded-lg border border-slate-200 p-3 has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-lesson-600">
+							<input class="mt-1 size-4" type="radio" name="prerequisite" value="a">
+							<span>{{PREREQUISITE_OPTION_A}}</span>
+						</label>
+						<label class="flex cursor-pointer gap-3 rounded-lg border border-slate-200 p-3 has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-lesson-600">
+							<input class="mt-1 size-4" type="radio" name="prerequisite" value="b">
+							<span>{{PREREQUISITE_OPTION_B}}</span>
+						</label>
+					</div>
+					<button type="submit" class="mt-5 rounded-lg bg-lesson-600 px-4 py-2 font-semibold text-white hover:bg-lesson-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lesson-600">
+						Check yo[118;1:3uur answer
+					</button>
+				</fieldset>
+				<p class="mt-4 hidden rounded-lg p-4" role="status" aria-live="polite" data-feedback></p>
+			</form>
+		</section>
+
+		<section aria-labelledby="explanation-heading">
+			<h2 id="explanation-heading" class="text-3xl font-bold tracking-tight">{{EXPLANATION_HEADING}}</h2>
+			<div class="mt-5 max-w-3xl space-y-5 text-lg leading-8 text-slate-700">
+				<p>{{PLAIN_DEFINITION}}</p>
+				<p>{{CORE_MECHANISM}}</p>
+				<aside class="rounded-xl border-l-4 border-amber-500 bg-amber-50 p-5 text-base text-amber-950" aria-label="Model limitation">
+					<p><strong>Model limit:</strong> {{SIMPLIFICATION_OR_LIMIT}}</p>
+				</aside>
+			</div>
+		</section>
+
+		<section aria-labelledby="model-heading">
+			<h2 id="model-heading" class="text-3xl font-bold tracking-tight">{{CONCRETE_MODEL_HEADING}}</h2>
+			<p class="mt-4 max-w-3xl leading-7 text-slate-700">{{MODEL_INTRODUCTION}}</p>
+
+			<figure class="mt-7 overflow-hidden rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+				<div class="flex min-h-64 items-center justify-center rounded-xl bg-slate-100 p-6" role="img" aria-label="{{FIGURE_ALT_TEXT}}">
+					<!-- Replace with an SVG, Mermaid diagram, plot, annotated trace, or interactive figure. -->
+					<p class="max-w-xl text-center text-slate-600">{{FIGURE_OR_DEMONSTRATION}}</p>
+				</div>
+				<figcaption class="mt-4 text-sm leading-6 text-slate-600">
+					<strong class="text-slate-900">What to notice:</strong> {{FIGURE_CAPTION}}
+				</figcaption>
+			</figure>
+		</section>
+
+		<section aria-labelledby="prediction-heading" class="rounded-2xl border border-lesson-100 bg-lesson-50 p-6 sm:p-8">
+			<h2 id="prediction-heading" class="text-3xl font-bold text-lesson-900">Predict before you reveal</h2>
+			<p class="mt-4 max-w-3xl leading-7 text-slate-800">{{PREDICTION_PROMPT}}</p>
+			<div class="mt-6">
+				<!--
+					The widget builds the response field, the reveal control, and the
+					self-rating. Supply only the answer. Keep the hidden attribute:
+					if scripting fails, the answer must not appear.
+				-->
+				<prediction-reveal objective-id="{{OBJECTIVE_ID}}">
+					<div data-answer hidden>
+						<p class="mt-2 leading-7">{{PREDICTION_EXPLANATION}}</p>
+					</div>
+				</prediction-reveal>
+				<noscript>
+					<p class="mt-4 rounded-lg border border-slate-300 bg-white p-4">Write your prediction on paper, then open the answer key supplied with this lesson.</p>
+				</noscript>
+			</div>
+		</section>
+
+		<section aria-labelledby="worked-example-heading">
+			<h2 id="worked-example-heading" class="text-3xl font-bold tracking-tight">Work through one complete example</h2>
+			<div class="mt-6 grid gap-6 lg:grid-cols-[minmax(0,1fr)_18rem]">
+				<div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+					<h3 class="text-xl font-semibold">{{WORKED_EXAMPLE_TITLE}}</h3>
+					<ol class="mt-5 list-decimal space-y-4 pl-6 leading-7 text-slate-700">
+						<li>{{WORKED_STEP_1}}</li>
+						<li>{{WORKED_STEP_2}}</li>
+						<li>{{WORKED_STEP_3}}</li>
+					</ol>
+				</div>
+				<aside class="rounded-2xl border border-slate-200 bg-slate-100 p-6" aria-labelledby="reasoning-heading">
+					<h3 id="reasoning-heading" class="text-xl font-semibold">Reasoning to keep</h3>
+					<p class="mt-4 leading-7 text-slate-700">{{REUSABLE_REASONING}}</p>
+				</aside>
+			</div>
+		</section>
+
+		<section aria-labelledby="guided-practice-heading">
+			<h2 id="guided-practice-heading" class="text-3xl font-bold tracking-tight">Practice with guidance</h2>
+			<p class="mt-4 max-w-3xl leading-7 text-slate-700">{{GUIDED_PRACTICE_PROMPT}}</p>
+
+			<div class="mt-6 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+				<!--
+					Select the widget whose learner action matches the objective.
+					Registered ids: multiple-choice, ordering-exercise,
+					classification-sort, prediction-reveal. See
+					assets/widgets/README.md for each config schema.
+					The [data-fallback] block stays visible if the widget cannot load.
+				-->
+				<lesson-widget
+					widget-id="{{WIDGET_ID}}"
+					objective-id="{{OBJECTIVE_ID}}"
+					data-config='{{WIDGET_JSON_CONFIGURATION}}'>
+					<div data-fallback class="rounded-lg bg-slate-100 p-4">
+						<p>{{STATIC_WIDGET_FALLBACK}}</p>
+					</div>
+				</lesson-widget>
+			</div>
+		</section>
+
+		<section aria-labelledby="independent-practice-heading">
+			<h2 id="independent-practice-heading" class="text-3xl font-bold tracking-tight">Try it independently</h2>
+			<p class="mt-4 max-w-3xl leading-7 text-slate-700">{{INDEPENDENT_EXERCISE}}</p>
+			<div class="mt-6 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+				<label class="font-semibold" for="independent-response">Your response</label>
+				<textarea id="independent-response" class="mt-3 min-h-48 w-full rounded-lg border border-slate-300 p-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lesson-600" aria-describedby="independent-help"></textarea>
+				<p id="independent-help" class="mt-2 text-sm text-slate-600">{{RESPONSE_REQUIREMENTS}}</p>
+				<div class="mt-5 flex flex-wrap gap-3">
+					<button type="button" class="rounded-lg border border-slate-300 bg-white px-4 py-2 font-semibold hover:bg-slate-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lesson-600" data-hint-button="1">
+						Show hint 1
+					</button>
+					<button type="button" class="rounded-lg border border-slate-300 bg-white px-4 py-2 font-semibold hover:bg-slate-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lesson-600" data-hint-button="2">
+						Show hint 2
+					</button>
+					<button type="button" class="rounded-lg bg-lesson-600 px-4 py-2 font-semibold text-white hover:bg-lesson-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lesson-600" data-rubric-button>
+						Compare with the rubric
+					</button>
+				</div>
+				<div class="mt-5 hidden space-y-3" aria-live="polite" data-exercise-support>
+					<p data-hint="1"><strong>Hint 1:</strong> {{HINT_1}}</p>
+					<p data-hint="2"><strong>Hint 2:</strong> {{HINT_2}}</p>
+					<div data-rubric>
+						<h3 class="font-semibold">Evaluation criteria</h3>
+						<ul class="mt-2 list-disc space-y-1 pl-6">
+							<li>{{RUBRIC_CRITERION_1}}</li>
+							<li>{{RUBRIC_CRITERION_2}}</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section aria-labelledby="retrieval-heading">
+			<h2 id="retrieval-heading" class="text-3xl font-bold tracking-tight">Retrieve and transfer</h2>
+			<div class="mt-6 grid gap-6 md:grid-cols-2">
+				<article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+					<h3 class="text-xl font-semibold">Recall without looking back</h3>
+					<p class="mt-3 leading-7 text-slate-700">{{RETRIEVAL_PROMPT}}</p>
+				</article>
+				<article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+					<h3 class="text-xl font-semibold">Apply it in a new context</h3>
+					<p class="mt-3 leading-7 text-slate-700">{{TRANSFER_PROMPT}}</p>
+				</article>
+			</div>
+		</section>
+
+		<section aria-labelledby="corrections-heading">
+			<h2 id="corrections-heading" class="text-3xl font-bold tracking-tight">Correct the common mistakes</h2>
+			<div class="mt-6 space-y-4">
+				<details class="rounded-xl border border-slate-200 bg-white p-5">
+					<summary class="cursor-pointer font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lesson-600">{{MISCONCEPTION_1}}</summary>
+					<p class="mt-3 leading-7 text-slate-700">{{MISCONCEPTION_1_CORRECTION}}</p>
+				</details>
+				<details class="rounded-xl border border-slate-200 bg-white p-5">
+					<summary class="cursor-pointer font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lesson-600">{{MISCONCEPTION_2}}</summary>
+					<p class="mt-3 leading-7 text-slate-700">{{MISCONCEPTION_2_CORRECTION}}</p>
+				</details>
+			</div>
+		</section>
+
+		<section aria-labelledby="summary-heading" class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+			<h2 id="summary-heading" class="text-3xl font-bold tracking-tight">Keep these ideas</h2>
+			<ul class="mt-5 list-disc space-y-3 pl-6 leading-7 text-slate-700">
+				<li>{{SUMMARY_POINT_1}}</li>
+				<li>{{SUMMARY_POINT_2}}</li>
+				<li>{{SUMMARY_POINT_3}}</li>
+			</ul>
+			<p class="mt-6 border-t border-slate-200 pt-6"><strong>Next step:</strong> {{NEXT_STEP}}</p>
+		</section>
+
+		<section aria-labelledby="sources-heading">
+			<h2 id="sources-heading" class="text-3xl font-bold tracking-tight">Sources</h2>
+			<ol class="mt-5 list-decimal space-y-4 pl-6 leading-7 text-slate-700">
+				<li>
+					<a class="font-semibold text-lesson-700 underline decoration-lesson-200 underline-offset-4 hover:text-lesson-900" href="{{SOURCE_1_URL}}">{{SOURCE_1_TITLE}}</a>
+					<span> — {{SOURCE_1_AUTHOR_OR_ORGANIZATION}}, {{SOURCE_1_DATE}}. {{SOURCE_1_CONTRIBUTION}}</span>
+				</li>
+				<li>
+					<a class="font-semibold text-lesson-700 underline decoration-lesson-200 underline-offset-4 hover:text-lesson-900" href="{{SOURCE_2_URL}}">{{SOURCE_2_TITLE}}</a>
+					<span> — {{SOURCE_2_AUTHOR_OR_ORGANIZATION}}, {{SOURCE_2_DATE}}. {{SOURCE_2_CONTRIBUTION}}</span>
+				</li>
+			</ol>
+		</section>
+	</main>
+
+	<footer class="mt-16 border-t border-slate-200 bg-white">
+		<div class="mx-auto max-w-5xl px-5 py-8 text-sm text-slate-600 sm:px-8">
+			<p>{{LESSON_FOOTER_NOTE}}</p>
+		</div>
+	</footer>
+
+	<script type="module">
+		const prerequisiteForm = document.querySelector('[data-formative-check]');
+		prerequisiteForm?.addEventListener('submit', (event) => {
+			event.preventDefault();
+			const selection = new FormData(prerequisiteForm).get('prerequisite');
+			const feedback = prerequisiteForm.querySelector('[data-feedback]');
+			feedback.classList.remove('hidden', 'bg-emerald-50', 'text-emerald-950', 'bg-amber-50', 'text-amber-950');
+
+			if (!selection) {
+				feedback.textContent = 'Select an answer before you check it.';
+				feedback.classList.add('bg-amber-50', 'text-amber-950');
+				return;
+			}
+
+			const correct = selection === '{{PREREQUISITE_CORRECT_VALUE}}';
+			feedback.textContent = correct
+				? '{{PREREQUISITE_CORRECT_FEEDBACK}}'
+				: '{{PREREQUISITE_INCORRECT_FEEDBACK}}';
+			feedback.classList.add(correct ? 'bg-emerald-50' : 'bg-amber-50', correct ? 'text-emerald-950' : 'text-amber-950');
+		});
+
+		const support = document.querySelector('[data-exercise-support]');
+		document.querySelectorAll('[data-hint-button]').forEach((button) => {
+			button.addEventListener('click', () => {
+				support?.classList.remove('hidden');
+				const hint = support?.querySelector(`[data-hint="${button.dataset.hintButton}"]`);
+				hint?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+			});
+		});
+
+		document.querySelector('[data-rubric-button]')?.addEventListener('click', () => {
+			support?.classList.remove('hidden');
+			support?.querySelector('[data-rubric]')?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+		});
+	</script>
+</body>
+</html>
+
